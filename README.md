@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# Bee Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The **Bee Dashboard** is a frontend interface built with React.js that allows businesses to test and integrate the Bee payment processor. It provides a clean UI for viewing customers, initiating payments, tracking transactions, and submitting feedback on services.
 
-In the project directory, you can run:
+This dashboard is an essential part of the Bee ecosystem, enabling developers and businesses to experience how Bee can be used as a payment processing tool in real-world applications.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Customer Management**: View registered customers and their details.
+- **Payment Initiation**: Initiate payments, calculate transaction fees, and see real-time processing.
+- **Transaction Tracking**: Track transaction statuses for all customers.
+- **Feedback System**: Submit and view customer feedback for transactions.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup
 
-### `npm run build`
+To set up the Bee Dashboard locally, follow the steps below.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Step 1: Clone the Repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+First, clone the Bee Dashboard submodule from the main Bee payment processor project.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+git clone https://github.com/your-repo/bee-dashboard.git
+```
 
-### `npm run eject`
+### Step 2: Install Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Navigate into the `bee-dashboard` folder and install all the required dependencies.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+cd bee-dashboard
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Step 3: Running the Dashboard
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Start the Bee Dashboard locally to begin testing.
 
-## Learn More
+```
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This will open the dashboard on `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Integration with Bee Payment Processor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The Bee Dashboard is designed to work seamlessly with the Bee Payment Processor. The main purpose of this dashboard is to:
 
-### Analyzing the Bundle Size
+1. Allow businesses to **test** how Bee integrates into their payment flows.
+2. Provide a **user-friendly interface** to manage customer payments, feedback, and transaction tracking.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Ensure that the Bee backend (server) is running so the dashboard can interact with the payment API.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Key Components
 
-### Advanced Configuration
+- **Customer List**: Displays a list of registered customers with their DID (Decentralized Identifiers) and Verifiable Credentials (VCs).
+- **Payment Button**: Simulate initiating a payment, complete with transaction fee calculation.
+- **Transaction List**: View and track the status of all ongoing and completed transactions.
+- **Feedback Form**: Customers can submit feedback for each transaction, and it is stored and displayed on the dashboard.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Limitations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **No Real Transactions**: Since this project operates in a sandbox environment, no real currency is exchanged.
+- **In-Memory Data**: Data, such as customers and transactions, is stored in memory, making it unsustainable for large-scale production.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future Enhancements
+
+- **Persistent Database**: Upgrade to a real database (e.g., MongoDB) to store customer and transaction data.
+- **Enhanced UI**: Add more visual features and improve the dashboard's overall UX.
+- **Real Currency Support**: Integrate with real financial institutions (PFIs) to support live transactions.
+
+---

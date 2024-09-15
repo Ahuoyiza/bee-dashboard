@@ -5,13 +5,14 @@ import axios from 'axios';
 const PaymentButton = ({ customerId, amount, currency }) => {
   const handlePayment = async () => {
     try {
+      const transactionFee = 0.02 * amount; // 2% transaction fee
+      const totalAmount = amount + transactionFee;
       const response = await axios.post('http://localhost:4000/initiate-payment', {
         customerId,
         amount,
         currency
       });
-      console.log('Payment initiated:', response.data);
-      // You could show a success message, update transaction history, etc.
+      console.log(`Payment initiated: Total amount (including fee): ${totalAmount}`, response.data);
     } catch (error) {
       console.error('Error initiating payment:', error);
     }
@@ -19,7 +20,7 @@ const PaymentButton = ({ customerId, amount, currency }) => {
 
   return (
     <Button colorScheme="teal" onClick={handlePayment}>
-      Pay {amount} {currency}
+      Pay {amount} {currency} (plus fee)
     </Button>
   );
 };
